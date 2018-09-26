@@ -1,5 +1,5 @@
 <h1>Players</h1>
-<ul>
+<ul [@listStagger]="players">
     <li *ngFor="let player of players">
         <a routerLink="/details/{{player.id}}">{{ player.name }}</a>
         <ul>

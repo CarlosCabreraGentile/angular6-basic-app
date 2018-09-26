@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-users',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
+  players: Object;
 
-  constructor() { }
+
+  constructor(private data: DataService) { }
 
   ngOnInit() {
+    this.data.getDataPlayers().
+    subscribe(
+      (data) => 
+        this.players = data
+    )
   }
 
 }

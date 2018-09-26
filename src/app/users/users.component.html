@@ -1,0 +1,17 @@
+<h1>Players</h1>
+<ul>
+    <li *ngFor="let player of players">
+        <a routerLink="/details/{{player.id}}">{{ player.name }}</a>
+        <ul>
+            <li>
+                {{ player.email }}
+            </li>
+            <li>
+                Company: {{ player.brand }}
+            </li>
+            <li>
+                <a href="http://{{ player.website }}" target="_blank">{{ player.website }}</a>
+            </li>
+        </ul>
+    </li>
+</ul>
